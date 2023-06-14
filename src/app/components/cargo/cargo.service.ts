@@ -10,7 +10,8 @@ import { Observable } from 'rxjs';
 })
 export class CargoService {
 
-  BASE_URL: string = 'http://localhost:8080'
+  //BASE_URL: string = 'http://localhost:8080'
+  BASE_URL: string = 'https://ciie069back.herokuapp.com'
 
   constructor( private httpClient: HttpClient ) { }
 
