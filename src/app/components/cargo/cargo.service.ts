@@ -11,11 +11,16 @@ import { Observable } from 'rxjs';
 export class CargoService {
 
   //BASE_URL: string = 'http://localhost:8080'
-  BASE_URL: string = 'https://ciie069back.herokuapp.com'
+  BASE_URL: string = 'https://ciie069back.onrender.com'
 
   constructor( private httpClient: HttpClient ) { }
 
   get(): Observable<CargoInterface[]>  {
     return this.httpClient.get<CargoInterface[]>(`${this.BASE_URL}/cargo/todos`)
   }
+
+  post(cargo: CargoInterface): Observable<CargoInterface>  {
+    return this.httpClient.post<CargoInterface>(`${this.BASE_URL}/cargo/crear`, cargo)
+  }
+  
 }
