@@ -13,7 +13,12 @@ const routes: Routes = [
   {
     path: 'cargo/alta',
     component: CargoFormComponent
-  }
+  },
+
+ {
+  path: 'cargo/alta/:clave', // Debes utilizar "/" en lugar de ":" para indicar que "id" es un parámetro
+  component: CargoFormComponent
+}
 
 ];
 

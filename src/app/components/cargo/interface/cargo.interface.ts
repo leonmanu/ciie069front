@@ -4,4 +4,5 @@ export interface CargoInterface {
     clave: string
     cargaHoraria: number
     designacion: [string]
+    createAt: Date
 }

@@ -1,7 +1,7 @@
 <p>cargo-form works!</p>
 
 <form [formGroup]="cargoForm" (ngSubmit)="submitForm()">
-  <div class="row">
+  <div [formGroup]="cargoForm" class="row">
     <mat-form-field appearance="outline">
       <mat-label>Nro. CUPOF</mat-label>
       <input matInput formControlName="cupof" placeholder="Cupof">
@@ -9,24 +9,31 @@
 
     <mat-form-field appearance="outline"> 
       <mat-label>Clave del cargo</mat-label>
-      <input matInput formControlName="clave" placeholder="Clave">
+      <input matInput formControlName="clave" placeholder="Clave" >
     </mat-form-field>
   </div>
-
 
   <div class="row">
-    <mat-form-field appearance="outline">
-      <mat-label>Carga Horaria</mat-label>
-      <input matInput formControlName="cargaHoraria" placeholder="Carga Horaria">
-    </mat-form-field>
+    <div >
+      <mat-form-field appearance="outline">
+        <mat-label>Carga Horaria</mat-label>
+        <input matInput formControlName="cargaHoraria" placeholder="Carga Horaria">
+      </mat-form-field>
+    </div>
+
+    <div >
+      <mat-form-field >
+        <input matInput formControlName="designacion" placeholder="Designación">
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field >
+        <input matInput formControlName="createAt" placeholder="createAt">
+      </mat-form-field>
+    </div>
 
   </div>
-
-  
-
-  <mat-form-field>
-    <input matInput formControlName="designacion" placeholder="Designación">
-  </mat-form-field>
 
   <button mat-raised-button color="primary" type="submit">Guardar</button>
 </form>

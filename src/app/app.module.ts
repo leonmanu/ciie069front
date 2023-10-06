@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from "@angular/material/button";
 import { NavbarModule } from './components/navbar/navbar.module';
 import { CargoFormModule } from './components/cargo/cargo-form/cargo-form.module';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { CargoFormModule } from './components/cargo/cargo-form/cargo-form.module
     HttpClientModule,
     MatButtonModule,
     NavbarModule,
-    CargoFormModule
+    CargoFormModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

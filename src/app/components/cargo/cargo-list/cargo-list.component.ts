@@ -18,13 +18,13 @@ export class CargoListComponent implements OnInit {
   }
 
   getCargo(){
-    this.cargoService.get()
+    this.cargoService.getAll()
       .subscribe(
         {
           next: res => 
             {
-              this.cargos = res,
-              console.log("Cargos: "+res)
+              this.cargos = res
+              //console.log("Cargos: "+res)
             },
           error: err => 
           {

@@ -10,17 +10,37 @@ import { Observable } from 'rxjs';
 })
 export class CargoService {
 
-  //BASE_URL: string = 'http://localhost:8080'
-  BASE_URL: string = 'https://ciie069back.onrender.com'
+  BASE_URL: string = 'http://localhost:8080'
+  //BASE_URL: string = 'https://ciie069back.onrender.com'
 
   constructor( private httpClient: HttpClient ) { }
 
-  get(): Observable<CargoInterface[]>  {
-    return this.httpClient.get<CargoInterface[]>(`${this.BASE_URL}/cargo/todos`)
+  getAll(): Observable<CargoInterface[]> {
+    return this.httpClient.get<CargoInterface[]>(`${this.BASE_URL}/cargo`);
   }
 
-  post(cargo: CargoInterface): Observable<CargoInterface>  {
-    return this.httpClient.post<CargoInterface>(`${this.BASE_URL}/cargo/crear`, cargo)
+  getOneId(id: string): Observable<CargoInterface> {
+    var cargo = this.httpClient.get<CargoInterface>(`${this.BASE_URL}/cargo/${id}`);
+    console.log("cargo encotrado-> "+ cargo)
+    return cargo
+  }
+
+  getOneClave(clave: string): Observable<CargoInterface> {
+    var cargo = this.httpClient.get<CargoInterface>(`${this.BASE_URL}/cargo/${clave}`);
+    console.log("cargo encotrado-> "+ cargo)
+    return cargo
+  }
+
+  create(cargo: CargoInterface): Observable<CargoInterface> {
+    return this.httpClient.post<CargoInterface>(`${this.BASE_URL}/cargo`, cargo);
+  }
+
+  delete(id: string): Observable<void> {
+    return this.httpClient.delete<void>(`${this.BASE_URL}/cargo/${id}`);
+  }
+
+  update(id: string, cargo: CargoInterface): Observable<CargoInterface> {
+    return this.httpClient.put<CargoInterface>(`${this.BASE_URL}/cargo/${id}`, cargo);
   }
   
 }
